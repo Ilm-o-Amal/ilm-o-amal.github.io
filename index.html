@@ -97,7 +97,7 @@ function render(l){
   try{localStorage.setItem('ilm-lang',l)}catch(e){}
 }
 document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
-let s='ro'; try{const v=localStorage.getItem('ilm-lang'); if(v&&H[v]) s=v;}catch(e){}
+let s='en'; try{const v=localStorage.getItem('ilm-lang'); if(v&&H[v]) s=v;}catch(e){}
 render(s);
 </script>
 </body>

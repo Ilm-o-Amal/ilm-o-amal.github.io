@@ -158,7 +158,7 @@ function pick(l){
   setTimeout(()=>{ render(l); doc.classList.remove('fade'); window.scrollTo({top:0}); }, 120);
 }
 document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>pick(b.dataset.l)));
-let start = 'ro';
+let start = 'en';
 try{ const s = localStorage.getItem('ilm-lang'); if (s && D.data[s]) start = s; }catch(e){}
 const q = new URLSearchParams(location.search).get('lang'); if (q && D.data[q]) start = q;
 render(start);
