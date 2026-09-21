@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ilm o Amal</title>
+<meta name="description" content="Ilm o Amal — articles on faith and everyday life by Usman Faraz, in English, Urdu and Roman Urdu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --ground:#F3F5F2; --paper:#FFFFFF; --ink:#1B2622; --muted:#5B6A64; --rule:#D8E0DB;
+  --accent:#1E6B4B; --accent-soft:#E3EFE8; --accent-ink:#FFFFFF;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --ui:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --urdu:"Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "Urdu Typesetting", serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#101614; --paper:#161E1B; --ink:#E4EBE7; --muted:#96A69F; --rule:#2A3531;
+    --accent:#6CC79A; --accent-soft:#1C2B25; --accent-ink:#0E1512; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#101614; --paper:#161E1B; --ink:#E4EBE7; --muted:#96A69F; --rule:#2A3531;
+  --accent:#6CC79A; --accent-soft:#1C2B25; --accent-ink:#0E1512; color-scheme: dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--ground) 88%,transparent);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.bar-in{max-width:760px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{text-decoration:none;font-family:var(--ui);font-weight:700;font-size:15px;letter-spacing:.02em;color:var(--accent);display:flex;gap:8px;align-items:baseline}
+.brand .u{font-family:var(--urdu);font-weight:600;font-size:15px;line-height:1}
+.switch{display:inline-flex;align-items:center;gap:8px;font-family:var(--ui)}
+.switch .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.seg{display:inline-flex;background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:3px}
+.seg button{appearance:none;border:0;background:transparent;color:var(--ink);font:600 14px/1 var(--ui);padding:9px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[data-l="ur"]{font-family:var(--urdu);font-size:14px;padding-block:6px 10px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+
+main{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:56px 64px}
+.hero{display:grid;gap:14px;padding-bottom:36px;border-bottom:1px solid var(--rule)}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(44px,9vw,72px);line-height:1;margin:0;letter-spacing:-.02em}
+.hero .ur{font-family:var(--urdu);color:var(--accent);font-size:26px;line-height:1.9;margin:0}
+.hero .en{font-family:var(--ui);font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:-6px 0 0}
+.tag{font-size:20px;line-height:1.55;color:var(--muted);margin:0;max-width:56ch}
+h2{font-family:var(--ui);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:36px 0 16px}
+.card{display:grid;gap:10px;background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:22px 22px 20px;text-decoration:none;color:var(--ink);transition:border-color .15s}
+.card:hover{border-color:var(--accent)}
+.card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.card .k{font-family:var(--ui);font-size:13px;font-weight:700;color:var(--accent);margin:0}
+.card h3{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.25;margin:0;text-wrap:balance}
+.card p{font-size:17px;line-height:1.6;color:var(--muted);margin:0}
+.card .row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--ui);font-size:14px;margin-top:6px}
+.card .go{font-weight:700;color:var(--accent)}
+footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--rule);font-family:var(--ui);font-size:15px;font-weight:600}
+[dir="rtl"] .hero h1{font-family:var(--urdu);font-size:clamp(38px,8vw,56px);line-height:1.9;letter-spacing:0}
+[dir="rtl"] .tag,[dir="rtl"] .card p{font-family:var(--urdu);line-height:2.3;font-size:17px}
+[dir="rtl"] h2,[dir="rtl"] .card .k,[dir="rtl"] .card .row,[dir="rtl"] footer{font-family:var(--urdu);letter-spacing:0;text-transform:none;line-height:2}
+[dir="rtl"] h2{font-size:17px}
+[dir="rtl"] .card h3{font-family:var(--urdu);font-size:22px;line-height:2}
+@media (max-width:520px){.bar-in{justify-content:center}.brand{display:none}.switch .lbl{display:none}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="bar-in">
+  <a class="brand" href="./">Ilm o Amal <span class="u">علم و عمل</span></a>
+  <div class="switch" role="group" aria-label="Language">
+    <span class="lbl" id="lbl">Read in</span>
+    <div class="seg">
+      <button type="button" data-l="en" aria-pressed="false">English</button>
+      <button type="button" data-l="ur" aria-pressed="false" lang="ur">اردو</button>
+      <button type="button" data-l="ro" aria-pressed="false">Roman Urdu</button>
+    </div>
+  </div>
+</div></div>
+<main id="doc"></main>
+<script>
+const H = {"en": {"title": "Ilm o Amal", "tag": "Knowledge you can live by — faith and everyday life, explained clearly in English, Urdu and Roman Urdu.", "arts": "Articles", "read": "Read in", "min": "12 min read", "open": "Read article", "by": "Written by Usman Faraz", "a1t": "The conversation no one has at home", "a1k": "Ilm o Haya", "a1d": "Puberty, boundaries, consent and modesty — what we must teach our sons and daughters, in the light of the Quran and Sunnah."}, "ro": {"title": "Ilm o Amal", "tag": "Woh ilm jis par amal ho sake — deen aur rozmarra zindagi ki baatein, saaf alfaaz mein, English, Urdu aur Roman Urdu mein.", "arts": "Articles", "read": "Zubaan", "min": "12 minute", "open": "Article parhein", "by": "Tehreer: Usman Faraz", "a1t": "Woh baatein jo ghar mein kabhi nahi hoteen", "a1k": "Ilm o Haya", "a1d": "Bulooghat, hudood, razamandi aur haya — woh baatein jo humein apne beton aur betiyon ko sikhani chahiyein, Quran o Sunnat ki roshni mein."}, "ur": {"title": "علم و عمل", "tag": "وہ علم جس پر عمل ہو سکے — دین اور روزمرہ زندگی کی باتیں، صاف الفاظ میں، انگریزی، اردو اور رومن اردو میں۔", "arts": "مضامین", "read": "زبان", "min": "12 منٹ", "open": "مضمون پڑھیں", "by": "تحریر: عثمان فراز", "a1t": "وہ باتیں جو گھر میں کبھی نہیں ہوتیں", "a1k": "علم و حیا", "a1d": "بلوغت، حدود، رضامندی اور حیا — وہ باتیں جو ہمیں اپنے بیٹوں اور بیٹیوں کو سکھانی چاہییں، قرآن و سنت کی روشنی میں۔"}};
+const doc=document.getElementById('doc');
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function render(l){
+  const u=H[l];
+  doc.innerHTML=`<header class="hero"><h1>${esc(u.title)}</h1>${l!=='ur'?'<p class="ur" lang="ur">علم و عمل</p>':''}${l==='en'?'<p class="en">Knowledge &amp; Action</p>':''}<p class="tag">${esc(u.tag)}</p></header>
+  <h2>${esc(u.arts)}</h2>
+  <a class="card" href="ilm-o-haya?lang=${l}"><p class="k">${esc(u.a1k)}</p><h3>${esc(u.a1t)}</h3><p>${esc(u.a1d)}</p><div class="row"><span>${esc(u.min)}</span><span class="go">${esc(u.open)} ${l==='ur'?'←':'→'}</span></div></a>
+  <footer>${esc(u.by)}</footer>`;
+  doc.setAttribute('dir',l==='ur'?'rtl':'ltr'); doc.setAttribute('lang',l==='ur'?'ur':l==='ro'?'ur-Latn':'en');
+  document.getElementById('lbl').textContent=u.read;
+  document.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
+  try{localStorage.setItem('ilm-lang',l)}catch(e){}
+}
+document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+let s='ro'; try{const v=localStorage.getItem('ilm-lang'); if(v&&H[v]) s=v;}catch(e){}
+render(s);
+</script>
+</body>
+</html>
