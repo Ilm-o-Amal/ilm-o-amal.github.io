@@ -11,3 +11,5 @@
 ---
 
 Written by **Usman Faraz** ([@usmanfarazz](https://github.com/usmanfarazz))
+
+_Every article can be read in English, اردو and Roman Urdu — pick your language at the top of the page._
