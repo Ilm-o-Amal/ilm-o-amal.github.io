@@ -7,7 +7,7 @@
 <meta name="description" content="Ilm o Amal — articles on faith and everyday life by Usman Faraz, in English, Urdu and Roman Urdu.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400&family=Figtree:wght@500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 <style>
 :root{
   --ground:#F3F5F2; --paper:#FFFFFF; --ink:#1B2622; --muted:#5B6A64; --rule:#D8E0DB;
@@ -59,6 +59,15 @@ h2{font-family:var(--ui);font-size:13px;font-weight:700;letter-spacing:.1em;text
 .card p{font-size:17px;line-height:1.6;color:var(--muted);margin:0}
 .card .row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--ui);font-size:14px;margin-top:6px}
 .card .go{font-weight:700;color:var(--accent)}
+.about{margin-top:40px}
+.about>p{font-size:18px;line-height:1.7;margin:0 0 20px;max-width:62ch}
+.ayah{margin:0;padding:20px 22px;background:var(--accent-soft);border-radius:12px;display:grid;gap:6px}
+.ayah p{margin:0;font-size:17px;line-height:1.6;font-style:italic}
+.ayah .ar{font-family:"Amiri","Noto Naskh Arabic",var(--urdu),serif;font-style:normal;font-size:28px;line-height:1.8;color:var(--accent);direction:rtl;text-align:start}
+.ayah cite{font-family:var(--ui);font-style:normal;font-size:13px;font-weight:700;color:var(--muted)}
+[dir="rtl"] .about>p{font-family:var(--urdu);line-height:2.3;font-size:17px}
+[dir="rtl"] .ayah p{font-family:var(--urdu);font-style:normal;line-height:2.2}
+[dir="rtl"] .ayah cite{font-family:var(--urdu);line-height:2}
 footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--rule);font-family:var(--ui);font-size:15px;font-weight:600}
 [dir="rtl"] .hero h1{font-family:var(--urdu);font-size:clamp(38px,8vw,56px);line-height:1.9;letter-spacing:0}
 [dir="rtl"] .tag,[dir="rtl"] .card p{font-family:var(--urdu);line-height:2.3;font-size:17px}
@@ -82,7 +91,7 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--rule);font-fa
 </div></div>
 <main id="doc"></main>
 <script>
-const H = {"en": {"title": "Ilm o Amal", "tag": "Knowledge you can live by — faith and everyday life, explained clearly in English, Urdu and Roman Urdu.", "arts": "Articles", "read": "Read in", "min": "12 min read", "open": "Read article", "by": "Written by Usman Faraz", "a1t": "The conversation no one has at home", "a1k": "Ilm o Haya", "a1d": "Puberty, boundaries, consent and modesty — what we must teach our sons and daughters, in the light of the Quran and Sunnah."}, "ro": {"title": "Ilm o Amal", "tag": "Woh ilm jis par amal ho sake — deen aur rozmarra zindagi ki baatein, saaf alfaaz mein, English, Urdu aur Roman Urdu mein.", "arts": "Articles", "read": "Zubaan", "min": "12 minute", "open": "Article parhein", "by": "Tehreer: Usman Faraz", "a1t": "Woh baatein jo ghar mein kabhi nahi hoteen", "a1k": "Ilm o Haya", "a1d": "Bulooghat, hudood, razamandi aur haya — woh baatein jo humein apne beton aur betiyon ko sikhani chahiyein, Quran o Sunnat ki roshni mein."}, "ur": {"title": "علم و عمل", "tag": "وہ علم جس پر عمل ہو سکے — دین اور روزمرہ زندگی کی باتیں، صاف الفاظ میں، انگریزی، اردو اور رومن اردو میں۔", "arts": "مضامین", "read": "زبان", "min": "12 منٹ", "open": "مضمون پڑھیں", "by": "تحریر: عثمان فراز", "a1t": "وہ باتیں جو گھر میں کبھی نہیں ہوتیں", "a1k": "علم و حیا", "a1d": "بلوغت، حدود، رضامندی اور حیا — وہ باتیں جو ہمیں اپنے بیٹوں اور بیٹیوں کو سکھانی چاہییں، قرآن و سنت کی روشنی میں۔"}};
+const H = {"en": {"title": "Ilm o Amal", "tag": "Islamic knowledge for everyday life — simple, clear, and rooted in the Quran and Sunnah.", "arts": "Articles", "read": "Read in", "min": "12 min read", "open": "Read article", "by": "Written by Usman Faraz", "a1t": "The conversation no one has at home", "a1k": "Ilm o Haya", "a1d": "Puberty, boundaries, consent and modesty — what we must teach our sons and daughters, in the light of the Quran and Sunnah.", "about_h": "What is Ilm o Amal?", "about": "Ilm o Amal is a small effort to bring the parts of our faith we hear about but rarely understand — or never talk about at home — into the open, clearly and with references. Every article is written in the light of the Quran and Sunnah, and can be read in English, Urdu or Roman Urdu. The aim isn’t just information, but knowledge you can act on.", "ayah": "“My Lord, increase me in knowledge.”", "ayah_ref": "Surah Taha 20:114"}, "ro": {"title": "Ilm o Amal", "tag": "Rozmarra zindagi ke liye deeni ilm — aasan alfaaz mein, Quran o Sunnat ki roshni mein.", "arts": "Articles", "read": "Zubaan", "min": "12 minute", "open": "Article parhein", "by": "Tehreer: Usman Faraz", "a1t": "Woh baatein jo ghar mein kabhi nahi hoteen", "a1k": "Ilm o Haya", "a1d": "Bulooghat, hudood, razamandi aur haya — woh baatein jo humein apne beton aur betiyon ko sikhani chahiyein, Quran o Sunnat ki roshni mein.", "about_h": "Ilm o Amal kya hai?", "about": "Ilm o Amal ek chhoti si koshish hai ke deen ki woh baatein jo hum sunte to hain magar samajhte nahi — ya jin par ghar mein kabhi baat hi nahi hoti — saaf aur ba-hawala andaaz mein saamne aayein. Har tehreer Quran o Sunnat ki roshni mein likhi jaati hai, aur English, Urdu aur Roman Urdu teeno mein parhi ja sakti hai. Maqsad sirf maloomat dena nahi, balke woh ilm dena hai jis par amal ho sake.", "ayah": "“Rabbi zidni ilma” — Aye mere Rab, mere ilm mein izafa farma.", "ayah_ref": "Surah Taha 20:114"}, "ur": {"title": "علم و عمل", "tag": "روزمرہ زندگی کے لیے دینی علم — آسان الفاظ میں، قرآن و سنت کی روشنی میں۔", "arts": "مضامین", "read": "زبان", "min": "12 منٹ", "open": "مضمون پڑھیں", "by": "تحریر: عثمان فراز", "a1t": "وہ باتیں جو گھر میں کبھی نہیں ہوتیں", "a1k": "علم و حیا", "a1d": "بلوغت، حدود، رضامندی اور حیا — وہ باتیں جو ہمیں اپنے بیٹوں اور بیٹیوں کو سکھانی چاہییں، قرآن و سنت کی روشنی میں۔", "about_h": "علم و عمل کیا ہے؟", "about": "علم و عمل ایک چھوٹی سی کوشش ہے کہ دین کی وہ باتیں جو ہم سنتے تو ہیں مگر سمجھتے نہیں — یا جن پر گھر میں کبھی بات ہی نہیں ہوتی — صاف اور باحوالہ انداز میں سامنے آئیں۔ ہر تحریر قرآن و سنت کی روشنی میں لکھی جاتی ہے، اور انگریزی، اردو اور رومن اردو تینوں میں پڑھی جا سکتی ہے۔ مقصد صرف معلومات دینا نہیں، بلکہ وہ علم دینا ہے جس پر عمل ہو سکے۔", "ayah": "اے میرے رب، میرے علم میں اضافہ فرما۔", "ayah_ref": "سورۃ طٰہٰ 20:114"}};
 const doc=document.getElementById('doc');
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function render(l){
@@ -90,6 +99,7 @@ function render(l){
   doc.innerHTML=`<header class="hero"><h1>${esc(u.title)}</h1>${l!=='ur'?'<p class="ur" lang="ur">علم و عمل</p>':''}${l==='en'?'<p class="en">Knowledge &amp; Action</p>':''}<p class="tag">${esc(u.tag)}</p></header>
   <h2>${esc(u.arts)}</h2>
   <a class="card" href="ilm-o-haya?lang=${l}"><p class="k">${esc(u.a1k)}</p><h3>${esc(u.a1t)}</h3><p>${esc(u.a1d)}</p><div class="row"><span>${esc(u.min)}</span><span class="go">${esc(u.open)} ${l==='ur'?'←':'→'}</span></div></a>
+  <section class="about"><h2>${esc(u.about_h)}</h2><p>${esc(u.about)}</p><blockquote class="ayah"><p lang="ar" class="ar">رَبِّ زِدْنِي عِلْمًا</p><p>${esc(u.ayah)}</p><cite>${esc(u.ayah_ref)}</cite></blockquote></section>
   <footer>${esc(u.by)}</footer>`;
   doc.setAttribute('dir',l==='ur'?'rtl':'ltr'); doc.setAttribute('lang',l==='ur'?'ur':l==='ro'?'ur-Latn':'en');
   document.getElementById('lbl').textContent=u.read;
