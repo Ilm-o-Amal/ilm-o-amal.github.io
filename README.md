@@ -7,6 +7,7 @@
 ## Articles
 
 - [Ilm o Haya — The conversation no one has at home](https://ilm-o-amal.github.io/ilm-o-haya)
+- [Why seek refuge from the night? — Raat ke shar se panah kyun?](https://ilm-o-amal.github.io/raat-ke-shar-se-panah)
 
 ---
 
